@@ -1,0 +1,33 @@
+query GetTodos {
+  todos {
+    id
+    title
+    completed
+    createdAt
+    updatedAt
+  }
+}
+
+mutation CreateTodo($title: String!) {
+  createTodo(title: $title) {
+    id
+    title
+    completed
+    createdAt
+    updatedAt
+  }
+}
+
+mutation UpdateTodo($id: ID!, $completed: Boolean!) {
+  updateTodo(id: $id, completed: $completed) {
+    id
+    title
+    completed
+    updatedAt
+  }
+}
+
+mutation DeleteTodo($id: ID!) {
+  deleteTodo(id: $id)
+}
+
